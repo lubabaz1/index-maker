@@ -44,7 +44,7 @@ for source, url in source_urls.items():
 
     for event in soup.find_all('div', class_='item event_item vevent'):
         for heading in event.find_all('div', class_='item_content_medium'):
-            title = heading.find('a').get_text().strip()
+            title = heading.find('a').get_text().strip(" |")
             link = heading.find('a').get('href').strip()
             if title not in title_set:
                 eventDetails = {}
